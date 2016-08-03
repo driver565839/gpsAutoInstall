@@ -7,7 +7,7 @@ echo "Done!"
 echo "Establishing link between Serial Port and gps0"
 rm /dev/gps0
 ln -s /dev/ttyS4 /dev/gps0
-chmod 7 /dev/gps0
+chmod 777 /dev/gps0
 echo "done"
 echo "Restarting NTPD..."
 service ntp restart
