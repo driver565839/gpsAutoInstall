@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Welcome to the NTP Auto-configurer"
+echo "If any part of this install fails, please ensure the permissions on this file allow for all the installations."
 echo "Installing needed packages...."
 add-apt-repository main 
 add-apt-repository universe
@@ -30,7 +31,7 @@ dkms install minnow-pps-gpio/20150721
 modprobe minnow-pps-gpio
 setserial -g /dev/ttyS4
 ln -s /dev/ttyS4 /dev/gps0
-chmod 7 /dev/gps0
+chmod 777 /dev/gps0
 nano /etc/ntp.conf
 nano /etc/apparmor.d/usr.sbin.ntpd
 nano /etc/rc.local
